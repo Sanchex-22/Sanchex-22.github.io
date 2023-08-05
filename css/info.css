@@ -1,0 +1,214 @@
+/* Definicion de colores */
+:root {
+
+    --rosa_3: #f7587d;
+    --rosa_4: #fb7793;
+    --rosa_5: #ff96aa;
+    --white: #ffffff;
+    --grey: #2C2F33;
+    --grey2: #23272a;
+    --grey3:#262626;
+    --grey4:#191919;
+    --grey5:#0c0c0c;
+    --black: #000000;
+    
+
+}
+
+/* banner */
+.section-banner{
+    background-color: var(--grey5);
+    height: 600px;
+    display: flex;
+}
+
+.banner-box{
+    margin-left: 60px;
+    width: 50%;
+    height: 90%;
+    color: var(--white);
+    padding: 2px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.img-perfil {
+    width: 90%;
+    height: 100%;
+    opacity: 0; /* Inicialmente, la imagen estará completamente transparente */
+    transform: translateX(100%);
+    animation: entrada-izquierda 1.5s forwards, mostrar 1s 1s forwards;
+    /* 'mostrar' comienza 1 segundo después de que termine 'entrada-izquierda' y mantiene el estado final */
+}
+
+@keyframes entrada-izquierda {
+    0% {
+        transform: translateX(100%);
+    }
+    50% {
+        transform: translateX(50%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes mostrar {
+    0% {
+        opacity: 0; /* La imagen está completamente transparente */
+    }
+    30% {
+        opacity: 0.3; /* La imagen se muestra parcialmente visible */
+    }
+    50% {
+        opacity: 0.5; /* La imagen se muestra parcialmente visible */
+    }
+    70% {
+        opacity: 0.7; /* La imagen se muestra parcialmente visible */
+    }
+    100% {
+        opacity: 1; /* La imagen se muestra completamente visible */
+    }
+}
+
+
+/* sobre mi */
+.section-1{
+    background-color: var(--grey4);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section-box{
+    display: flex;
+    justify-content: center;
+    /* background-color: var(--rosa_1); */
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.box-info{
+    width: 50%;
+    margin: 1%;
+    border-radius: 5px;
+    background-color: var(--rosa_3);
+    color: var(--white);
+}
+
+
+/* PROYECTOS */
+.section-proyectos{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--grey5);
+    color: var(--white);
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.proyecto-box{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    margin: 10px;
+    height: 400px;
+    width: 250px;
+    background-color: var(--grey4);
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 1px;
+    position: relative;
+    transition: .15s ease-in;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 1px solid var(--rosa_4);
+}
+
+.card:hover {
+    box-shadow: 0 0 0 0.2px #ffffff, 0 10px 20px 0 rgba(255, 255, 255, .1);
+    transform: translateY(-5px);
+}
+
+
+
+.card-image{
+    height: 150px;
+    width: 150px;
+}
+
+.card-image img{
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+}
+
+.card-info{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-items: center;
+
+}
+
+.card-footer {
+	margin-top: 1.25rem;
+	border-top: 1px solid #ddd;
+	padding-top: 1.25rem;
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+
+.card-point{	
+	display: flex;
+	align-items: center;
+	color: #787878;
+    margin-right: 5px;
+    font-size: 20px;
+}
+
+/* Aqui va el responsive celular*/
+
+@media (max-width: 480px) {
+    /* Cambiar el diseño a columnas cuando el ancho de la pantalla sea menor o igual a 768px */
+    .section-banner{
+        flex-wrap: wrap-reverse;
+        width: 100%;
+        height: 100%;
+    }
+    .banner-box{
+        /* display: flex;
+        flex-direction: column;
+        margin-left:0px;
+        width: 100%;
+        height: 200px;
+        justify-content: center;
+        align-items: center;
+        transform: translateY(-40%);
+        position: relative;
+        z-index: 1; */
+        display: none;
+    }
+    .banner-box2{
+        display: block;
+        width: 100%;
+        height: 400px;
+        justify-content: center;
+        align-items: center;
+    }
+    .imagen-perfil{
+
+    }
+
+}
